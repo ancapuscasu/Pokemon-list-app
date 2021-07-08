@@ -5,4 +5,3 @@ View a list of Pokémon and find out about their characteristics and abilities.
 
 #How to get the project running
 #Project dependencies (e.g., JavaScript version, ESLint rules)
-s
