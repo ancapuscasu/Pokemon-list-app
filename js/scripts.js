@@ -24,3 +24,12 @@ let pokemonList = [
 	types: ['ground']
 }
 ]
+
+for (let i = 0; i < pokemonList.length; i++){
+	if (pokemonList[i].height > 50) {
+		document.write(`<p> ${pokemonList[i].name} (height: ${pokemonList[i].height}") - I am a tall Pokemon! </p>`);
+	} else {
+		document.write(`<p> ${pokemonList[i].name} (height: ${pokemonList[i].height}")</p>`);
+	}
+}
+
