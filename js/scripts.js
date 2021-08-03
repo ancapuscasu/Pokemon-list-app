@@ -25,11 +25,12 @@ let pokemonList = [
 }
 ]
 
-for (let i = 0; i < pokemonList.length; i++){
-	if (pokemonList[i].height > 50) {
-		document.write(`<p> ${pokemonList[i].name} (height: ${pokemonList[i].height}") - I am a tall Pokemon! </p>`);
+
+pokemonList.forEach(function(pokemon){
+	if (pokemon.height>50) {
+		document.write(`<p> ${pokemon.name} (height: ${pokemon.height}") - I am a tall Pokemon! </p>`);
 	} else {
-		document.write(`<p> ${pokemonList[i].name} (height: ${pokemonList[i].height}")</p>`);
+		document.write(`<p> ${pokemon.name} (height: ${pokemon.height}")</p>`);
 	}
-}
+})
 
