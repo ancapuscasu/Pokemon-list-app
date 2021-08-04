@@ -46,7 +46,7 @@ let pokemonRepository = (function(){
 }) ();
 
 	
-pokemonRepository.getAll.forEach(function(pokemon){
+pokemonRepository.getAll().forEach(function(pokemon){
 	if (pokemon.height>50) {
 		document.write(`<p> ${pokemon.name} (height: ${pokemon.height}") - I am a tall Pokemon! </p>`);
 	} else {
