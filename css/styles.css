@@ -1,0 +1,28 @@
+/*POKEMON COLORS
+yellow: #FFCB05;
+blue: #3D7DCA;
+navy blue: #003A70;*/
+
+
+* {
+	box-sizing: border-box;
+}
+
+.pokemon-list{
+	list-style-type: none;
+}
+
+.fancyButton{
+	width: 20vw;
+	cursor: pointer;
+	border: 5px solid #3D7DCA;
+	border-radius: 0.3em;
+	color: #FFCB05; 
+	font-size: 1.7em;
+	padding: 7px;
+	margin-bottom: 5px;
+	background: transparent;
+	outline: #003A70;
+
+
+}
