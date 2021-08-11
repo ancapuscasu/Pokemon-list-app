@@ -25,7 +25,27 @@ let pokemonRepository = (function(){
 	types: ['ground']
 }
 ];
-	
+
+	// -- Function To Add Item And Buttons to Pokedex 
+
+	function addListItem(pokemon){
+		let list = document.querySelector('.pokemon-list');
+		let listItem = document.createElement('li');
+		let button = document.createElement('button');
+		button.innerText = pokemon.name;
+		button.classList.add('fancyButton');
+		listItem.appendChild(button);
+		list.appendChild(listItem);
+		button.addEventListener('click', function(event){
+			showDetails(pokemon);
+		});
+	}
+
+
+	function showDetails(pokemon){
+		console.log(pokemon);
+	}
+
 	function add(pokemon){
 		pokemonList.push(pokemon);
 	}
@@ -41,16 +61,12 @@ let pokemonRepository = (function(){
 	return {
 		add: add,
 		getAll: getAll,
-		removeLast:removeLast
+		removeLast:removeLast,
+		addListItem: addListItem
 	};
 }) ();
 
 	
 pokemonRepository.getAll().forEach(function(pokemon){
-	if (pokemon.height>50) {
-		document.write(`<p> ${pokemon.name} (height: ${pokemon.height}") - I am a tall Pokemon! </p>`);
-	} else {
-		document.write(`<p> ${pokemon.name} (height: ${pokemon.height}")</p>`);
-	}
+	pokemonRepository.addListItem(pokemon);
 })
-
