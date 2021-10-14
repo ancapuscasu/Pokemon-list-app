@@ -9,7 +9,10 @@ navy blue: #003A70;*/
 }
 
 .pokemon-list {
-	list-style-type: none;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .fancyButton {
@@ -63,6 +66,11 @@ navy blue: #003A70;*/
   background: none;
   color: #777;
   text-decoration: underline;
+}
+
+@media all and (max-width: 850px) {
+	.fancyButton {
+		width: 60vw;
 }
 
 
