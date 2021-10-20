@@ -7,24 +7,44 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="css/styles.css">
 		<title>List of Pokemon</title>
+		<link rel="icon" href="https://img.icons8.com/cute-clipart/64/000000/pokemon.png">
 	</head>
-	<body>
 
+
+	<body>
 		<!-- NavBar with Search Bar -->
-		<header>
-			<nav class="navbar navbar-light bg-light justify-content-between fixed-top">
-	  			<a class="navbar-brand" href="index.html">Pokedex</a>
-	  			<form class="form-inline">
-	    			<input class="form-control mr-sm-2" type="search" placeholder="Search Pokemon" aria-label="Search Pokemon">
-	    			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-	  			</form>
+		<header class="page-header">
+			<nav class="navbar navbar-expand-sm navbar-light fixed-top">
+	  			<a class="navbar-brand" href="index.html">
+	  				<img class = "logo img-fluid" src="img/pokemon-logo.png" alt="Pokemon logo">
+	  			</a>
+	  			 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        			<span class="navbar-toggler-icon"></span>
+      			</button>
+
+      			<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        			<form class="form-inline my-2 my-lg-0">
+          				<input class="form-control mr-sm-2" id="filter" type="search" placeholder="Find a pokemon.." aria-label="Search">
+        			</form>
+      			</div>
+
 			</nav>
 		</header>
-	 
+
+		<br>
+
+		<div class="text-center">
+			<h1>
+				<img src="img/pokeball-left.png" alt="pokeball icon" width="50px"/>
+					POKEDEX
+				<img src="img/pokeball-right.png" alt="pokeball icon" width="50px"/>
+			</h1>
+		</div>
+
 
 		<!-- List of Pokemon -->
-		<div class="container">
-			<ul class="pokemon-list list-group list-unstyled row justify-content-center"></ul>
+		<div class="container list-container">
+			<ul class="pokemon-list row list-group list-unstyled justify-content-center"></ul>
 		</div>
 
 
@@ -38,9 +58,7 @@
 		          <span aria-hidden="true">&times;</span>
 		        </button>
 		      </div>
-		      <div class="modal-body">
-		        ...
-		      </div>
+		      <div class="modal-body"></div>
 		    </div>
 		  </div>
 		</div>
