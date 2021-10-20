@@ -146,6 +146,23 @@ let pokemonRepository = (function(){
 		}
 	});
 
+	// Function to search for pokemon using search bar
+
+	let pokemonSearchBar = document.querySelector('#filter');
+
+	pokemonSearchBar.addEventListener('input', function() {
+		let pokeListItem = document.querySelectorAll('li');
+		let value = pokemonSearchBar.value.toUpperCase();
+
+		pokeListItem.forEach(function(pokemon){
+			if (pokemon.innerText.toUpperCase().indexOf(value) > -1) {
+				pokemon.style.display = 'block';
+			} else {
+				pokemon.style.display = 'none';
+			}
+		});
+	});
+
 
 	return {
 		add: add,
