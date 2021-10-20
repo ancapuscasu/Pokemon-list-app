@@ -33,3 +33,7 @@ navy blue: #003A70;*/
 .pokemon-list{
 	flex-direction: row;
 }
+
+li.group-list-item{
+	margin-bottom: 15px;
+}
