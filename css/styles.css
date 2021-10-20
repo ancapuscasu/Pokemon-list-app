@@ -26,14 +26,16 @@ navy blue: #003A70;*/
 	background-color: #E3ABB5;
 }
 
+.app-title {
+	margin-top: 1em;
+}
+
 .list-container{
 	margin-top: 30px;
 }
 
-.pokemon-list{
-	flex-direction: row;
-}
 
 li.group-list-item{
 	margin-bottom: 15px;
 }
+
