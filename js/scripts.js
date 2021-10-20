@@ -16,7 +16,6 @@ let pokemonRepository = (function(){
 	}
 
 
-
 	// -- Function To Add Item And Buttons to Pokedex 
 
 	function addListItem(pokemon){
@@ -26,16 +25,21 @@ let pokemonRepository = (function(){
 
 		//Creating list items to go inside ul
 		let listItem = document.createElement('li');
-		listItem.classList.add('group-list-item', 'list-inline-item');
+		listItem.classList.add('group-list-item', 'col-xl-2', 'col-lg-4', 'col-md-6');
 
 		//Creating buttons for list items 
 		let button = document.createElement('button');
 		button.innerText = pokemon.name;
-		button.classList.add('btn', 'btn-warning');
+		button.classList.add('btn', 'btn-warning', 'btn-block');
 
 		//Linking buttons to modal
 		button.setAttribute("data-target", "#pokemonModalContainer");
 		button.setAttribute('data-toggle', 'modal');
+
+		//EVENT: open modal on click
+		button.addEventListener('click', function(event){
+			showDetails(pokemon);
+		});
 
 
 		//append button to listItem
@@ -43,10 +47,6 @@ let pokemonRepository = (function(){
 		//append listItem to list
 		list.appendChild(listItem);
 
-		//EVENT: open modal on click
-		button.addEventListener('click', function(event){
-			showDetails(pokemon);
-		});
 	}
 
 
@@ -94,9 +94,8 @@ let pokemonRepository = (function(){
 	let modalContainer = document.querySelector('#pokemonModalContainer');
 
 	function showModal(pokemon) {
-		let modalBody = $('.modal-body');
 		let modalTitle = $('.modal-title');
-		let modalHeader = $('.modal-header');
+		let modalBody = $('.modal-body');
 
 		modalTitle.empty();
 		modalBody.empty();
