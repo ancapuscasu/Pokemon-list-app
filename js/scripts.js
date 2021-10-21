@@ -30,14 +30,14 @@ let pokemonRepository = (function(){
 		//Creating buttons for list items 
 		let button = document.createElement('button');
 		button.innerText = pokemon.name;
-		button.classList.add('btn', 'btn-warning', 'btn-block');
+		button.classList.add('btn', 'btn-warning', 'btn-block', 'border', 'border-primary');
 
 		//Linking buttons to modal
-		button.setAttribute("data-target", "#pokemonModalContainer");
+		button.setAttribute('data-target', '#pokemonModalContainer');
 		button.setAttribute('data-toggle', 'modal');
 
 		//EVENT: open modal on click
-		button.addEventListener('click', function(event){
+		button.addEventListener('click', function(){
 			showDetails(pokemon);
 		});
 
@@ -94,27 +94,36 @@ let pokemonRepository = (function(){
 	let modalContainer = document.querySelector('#pokemonModalContainer');
 
 	function showModal(pokemon) {
-		let modalTitle = $('.modal-title');
-		let modalBody = $('.modal-body');
+		let modalTitle = document.querySelector('.modal-title');
+		let modalBody = document.querySelector('.modal-body');
 
-		modalTitle.empty();
-		modalBody.empty();
+		modalTitle.innerText = '';
+		modalBody.innerText = '';
 
 		//create element for name in modal
-		let nameElement = $("<h1>" + pokemon.name + "</h1>");
+		let nameElement = document.createElement('h1');
+		nameElement.innerText = pokemon.name;
+		nameElement.classList.add('name-element');
+
 		//create img in modal content
-		let imageElement = $('<img class = "modal-img">');
-		imageElement.attr("src", pokemon.imageUrl);
+		let imageElement = document.createElement('img');
+		imageElement.src = pokemon.imageUrl;
+		imageElement.classList.add('modal-img');
+
 		//create element for height in modal content
-		let heightElement = $('<p>' + "height : " + pokemon.height + "</p>");
+		let heightElement = document.createElement('p');
+		heightElement.innerText = 'Height: ' + pokemon.height
+
 		//create element for pokemon in modal content
-		let typesNames = [];
+		let pokemonTypes = [];
 		
 			Object.keys(pokemon.types).forEach(key => {
-				typesNames.push(pokemon.types[key].type.name);
+				pokemonTypes.push(' ' + pokemon.types[key].type.name);
 			});
 
-		let typesElement = $('<p>' + "types : " + typesNames + "</p>");
+		let typesElement = document.createElement('p');
+		typesElement.innerText = 'Type: ' + pokemonTypes;
+		typesElement.classList.add('types-element');
 
 
 		modalTitle.append(nameElement);
@@ -152,10 +161,10 @@ let pokemonRepository = (function(){
 
 	pokemonSearchBar.addEventListener('input', function() {
 		let pokeListItem = document.querySelectorAll('li');
-		let value = pokemonSearchBar.value.toUpperCase();
+		let filter = pokemonSearchBar.value.toUpperCase();
 
 		pokeListItem.forEach(function(pokemon){
-			if (pokemon.innerText.toUpperCase().indexOf(value) > -1) {
+			if (pokemon.innerText.toUpperCase().indexOf(filter) === 0) {
 				pokemon.style.display = 'block';
 			} else {
 				pokemon.style.display = 'none';
