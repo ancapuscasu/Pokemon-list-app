@@ -8,36 +8,104 @@ navy blue: #003A70;*/
 	box-sizing: border-box;
 }
 
+
+/* -- header elements */
+
 .page-header {
-    padding: 40px;
+    padding: 50px;
 }
 
-.container {
-	margin-top: 150px;
+.navbar {
+	background-color: #FF0000;
+	padding-top: 20px;
+    padding-bottom: 20px;
 }
 
-.logo{
-	width: 150px;
-	height:  60px;
-	object-fit: cover;
+.navbar-brand {
+	margin-left: 3vw;
 }
 
-.navbar{
-	background-color: #E3ABB5;
+.navbar-toggler {
+	margin-right: 3vw;
+}
+
+/*-- main elements */
+
+.pokemon-list {
+	margin-top: 60px;
+	margin-left: 50px;
+	margin-right: 50px;
 }
 
 
-.list-container{
-	margin-top: 30px;
-}
-
-
-li.group-list-item{
+li.group-list-item {
 	margin-bottom: 15px;
 }
 
 .btn,
 .name-element,
-.types-element{
+.types-element {
 	text-transform: capitalize;
+}
+
+
+.group-list-item{
+	display: flex;
+	justify-content: center;
+}
+
+/*--modal elements*/
+
+.modal-content{
+	margin-top: 5vh;
+}
+
+.modal-title{
+	color: #FFCB05;
+}
+
+.modal-header {
+	border: none;
+	background-color: #303030;
+}
+.modal-body {
+	display: flex;
+	flex-direction: column;
+	border-left: 6px solid #303030;
+	border-right: 6px solid #303030;
+}
+
+.modal-img {
+  height: 200px;
+  width: 200px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  align-self: center;
+}
+
+.modal-footer{
+	border-left: 6px solid #303030;
+	border-right: 6px solid #303030;
+	border-bottom: 6px solid #303030;
+	border-top: none;
+}
+
+.btn-close {
+	color: #343198;
+}
+
+
+/*-- Go to top button*/
+#btn-back-to-top {
+	position: fixed;
+  	bottom: 20px;
+  	right: 25px;
+  	background-color: #343198;
+  	border: none;
+  	border-radius: 50%;
+}
+
+
+.bi-caret-up-fill{
+	color: #fdc109;
 }
