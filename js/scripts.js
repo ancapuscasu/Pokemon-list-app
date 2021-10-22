@@ -30,7 +30,7 @@ let pokemonRepository = (function(){
 		//Creating buttons for list items 
 		let button = document.createElement('button');
 		button.innerText = pokemon.name;
-		button.classList.add('btn', 'btn-warning', 'btn-block', 'border', 'border-primary');
+		button.classList.add('btn', 'btn-warning','btn-block', 'pokemon-button', 'border', 'border-secondary');
 
 		//Linking buttons to modal
 		button.setAttribute('data-target', '#pokemonModalContainer');
@@ -75,7 +75,7 @@ let pokemonRepository = (function(){
 		return fetch(url).then(function (response) {
 			return response.json();
 		}).then(function (details){
-			pokemon.imageUrl = details.sprites.front_default;
+			pokemon.imageUrl = details.sprites.other.dream_world.front_default;
 			pokemon.height = details.height;
 			pokemon.types = details.types;
 		}).catch(function(e){
@@ -191,3 +191,23 @@ pokemonRepository.loadList().then(function(){
 		pokemonRepository.addListItem(pokemon);
 	});
 });
+
+
+//function to scroll back to the top 
+
+let scrollUpButton = document.getElementById('btn-back-to-top');
+
+scrollUpButton.addEventListener('click', backToTop);
+
+function backToTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+
+
+
+
+
+
+
